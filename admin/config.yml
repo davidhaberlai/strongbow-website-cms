@@ -1,8 +1,163 @@
+# DecapBridge-Login (ersetzt Netlify Identity + Git Gateway, die abgeschaltet wurden)
 backend:
   name: git-gateway
+  repo: davidhaberlai/strongbow-website-cms
   branch: main
+  identity_url: https://auth.decapbridge.com/sites/579f9972-8347-4846-97df-051ca9e0947e
+  gateway_url: https://gateway.decapbridge.com
+
+site_url: https://strongbow-website-cms.netlify.app
 
 # Bilder, die der Eigentümer über die Foto-Sammlung oder Bildfelder hochlädt,
+# landen hier und werden über die Website ausgeliefert.
+media_folder: "assets/img/uploads"
+public_folder: "/assets/img/uploads"
+
+locale: "de"
+
+collections:
+  - name: "termine"
+    label: "Termine"
+    label_singular: "Termin"
+    description: "Kommende Auftritte. Erscheinen automatisch auf der Startseite, auf der Termine-Seite und in der Countdown-Leiste. Vergangene Termine verschwinden automatisch."
+    files:
+      - name: "termine"
+        label: "Termine"
+        file: "_data/termine.json"
+        fields:
+          - label: "Termine"
+            name: "termine"
+            widget: "list"
+            label_singular: "Termin"
+            summary: "{{fields.datum}} — {{fields.titel}}"
+            fields:
+              - { label: "Titel / Veranstaltung", name: "titel", widget: "string" }
+              - { label: "Datum", name: "datum", widget: "date", format: "YYYY-MM-DD", date_format: "DD.MM.YYYY" }
+              - { label: "Uhrzeit", name: "uhrzeit", widget: "string", hint: "Format HH:MM, z. B. 20:00" }
+              - { label: "Ort", name: "ort", widget: "string" }
+              - label: "Eintritt (optional)"
+                name: "eintritt"
+                widget: "string"
+                required: false
+                hint: 'z. B. "Eintritt frei" — leer lassen, wenn kein Hinweis nötig ist'
+
+  - name: "news"
+    label: "News"
+    label_singular: "News-Eintrag"
+    description: 'Erscheint als Kurztext auf der Startseite ("Frisch von der Bühne") und vollständig auf der News-Seite.'
+    files:
+      - name: "news"
+        label: "News"
+        file: "_data/news.json"
+        fields:
+          - label: "News-Einträge"
+            name: "news"
+            widget: "list"
+            label_singular: "Eintrag"
+            summary: "{{fields.titel}}"
+            fields:
+              - label: 'Datum (frei, z. B. "7. August 2026" oder "Laufend")'
+                name: "datum"
+                widget: "string"
+              - { label: "Titel", name: "titel", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+              - label: "Bild"
+                name: "bild"
+                widget: "image"
+                choose_url: true
+                hint: "Bild hochladen oder eine Bild-URL einfügen"
+
+  - name: "fotos"
+    label: "Foto-Galerie"
+    label_singular: "Foto"
+    description: "Alle Bilder in der Galerie auf der Fotos-Seite."
+    files:
+      - name: "fotos"
+        label: "Fotos"
+        file: "_data/fotos.json"
+        fields:
+          - label: "Fotos"
+            name: "fotos"
+            widget: "list"
+            label_singular: "Foto"
+            summary: "{{fields.alt}} ({{fields.kategorie}})"
+            fields:
+              - { label: "Bild", name: "bild", widget: "image", choose_url: true }
+              - { label: "Beschreibung (Alt-Text)", name: "alt", widget: "string" }
+              - label: "Kategorie"
+                name: "kategorie"
+                widget: "select"
+                options:
+                  - { label: "Konzerte", value: "konzerte" }
+                  - { label: "Offstage", value: "offstage" }
+                  - { label: "Musiker", value: "musiker" }
+                  - { label: "Proben", value: "proben" }
+
+  - name: "texte"
+    label: "Texte"
+    files:
+      - name: "texte"
+        label: "Freitexte auf der Website"
+        file: "_data/texte.json"
+        fields:
+          - label: "Startseite — Über uns"
+            name: "ueber_uns"
+            widget: "object"
+            fields:
+              - label: "Überschrift"
+                name: "ueberschrift"
+                widget: "string"
+                hint: "Zeilenumbruch: einfach eine neue Zeile im Textfeld"
+              - { label: "Einleitungssatz (fett)", name: "lead", widget: "text" }
+              - { label: "Text", name: "text", widget: "text" }
+          - label: "Biographie"
+            name: "biographie"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Titel (Seiten-Überschrift)", name: "titel", widget: "string" }
+              - { label: "Einleitung", name: "intro", widget: "text" }
+              - { label: "Zitat", name: "zitat", widget: "string" }
+              - { label: "Text zum Zitat", name: "zitat_text", widget: "text" }
+              - label: "Abschnitte"
+                name: "abschnitte"
+                widget: "list"
+                label_singular: "Abschnitt"
+                summary: "{{fields.titel}}"
+                fields:
+                  - { label: "Zwischenüberschrift", name: "titel", widget: "string" }
+                  - label: "Text (Absätze mit einer Leerzeile trennen)"
+                    name: "text"
+                    widget: "text"
+          - label: "Kontakt-Einleitung"
+            name: "kontakt_intro"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Titel", name: "titel", widget: "string" }
+              - { label: "Text", name: "lead", widget: "text" }
+          - label: "FAQ (Kontaktseite)"
+            name: "faq"
+            widget: "list"
+            label_singular: "Frage"
+            summary: "{{fields.frage}}"
+            fields:
+              - { label: "Frage", name: "frage", widget: "string" }
+              - label: "Antwort"
+                name: "antwort"
+                widget: "text"
+                hint: 'Links im Format <a href="...">Text</a> sind möglich'
+          
+# DecapBridge-Login (ersetzt Netlify Identity + Git Gateway, die abgeschaltet wurden)
+backend:
+  name: git-gateway
+  repo: davidhaberlai/strongbow-website-cms
+  branch: main
+  identity_url: https://auth.decapbridge.com/sites/579f9972-8347-4846-97df-051ca9e0947e
+  gateway_url: https://gateway.decapbridge.com
+
+site_url: https://strongbow-website-cms.netlify.app
+er, die der Eigentümer über die Foto-Sammlung oder Bildfelder hochlädt,
 # landen hier und werden über die Website ausgeliefert.
 media_folder: "assets/img/uploads"
 public_folder: "/assets/img/uploads"
