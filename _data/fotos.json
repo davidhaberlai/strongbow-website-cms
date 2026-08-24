@@ -1,0 +1,84 @@
+{
+  "fotos": [
+    {
+      "bild": "https://the-strongbow.at/wp-content/uploads/2023/09/Harley-Bar-2023-057.jpg",
+      "alt": "Konzert – European Bike Week",
+      "kategorie": "konzerte"
+    },
+    {
+      "bild": "https://the-strongbow.at/wp-content/uploads/2023/02/seen-by-streb-1102.jpg",
+      "alt": "Konzert – Rockhouse Salzburg",
+      "kategorie": "konzerte"
+    },
+    {
+      "bild": "https://the-strongbow.at/wp-content/uploads/2024/03/seenbystreb-8563.jpg",
+      "alt": "Konzert – Rockhouse 2024",
+      "kategorie": "konzerte"
+    },
+    {
+      "bild": "https://the-strongbow.at/wp-content/uploads/2023/02/seen-by-streb-0905.jpg",
+      "alt": "Konzert – Rockhouse Salzburg",
+      "kategorie": "konzerte"
+    },
+    {
+      "bild": "https://the-strongbow.at/wp-content/uploads/2023/02/seen-by-streb-1979.jpg",
+      "alt": "Konzert – Rockhouse Salzburg",
+      "kategorie": "konzerte"
+    },
+    {
+      "bild": "https://the-strongbow.at/wp-content/uploads/2008/11/Leo-Moertl-The-Coverband-Strongbow-Promopics-0002.jpg",
+      "alt": "Leo – Frontman",
+      "kategorie": "musiker"
+    },
+    {
+      "bild": "https://the-strongbow.at/wp-content/uploads/2020/05/OOB-3-1.jpg",
+      "alt": "Stoff – Gitarre",
+      "kategorie": "musiker"
+    },
+    {
+      "bild": "https://the-strongbow.at/wp-content/uploads/2009/03/Christl-0009.jpg",
+      "alt": "Chris – Drums",
+      "kategorie": "musiker"
+    },
+    {
+      "bild": "https://the-strongbow.at/wp-content/uploads/2009/03/Fredl-0002.jpg",
+      "alt": "Fredl – Bass",
+      "kategorie": "musiker"
+    },
+    {
+      "bild": "https://the-strongbow.at/wp-content/uploads/2020/06/DSC01998-charly-klein.jpg",
+      "alt": "Charly – Keyboard",
+      "kategorie": "musiker"
+    },
+    {
+      "bild": "https://the-strongbow.at/wp-content/uploads/2021/08/The-Strongbow-Gruppenfoto-2021-scaled.jpg",
+      "alt": "Bandfoto Offstage",
+      "kategorie": "offstage"
+    },
+    {
+      "bild": "https://the-strongbow.at/wp-content/uploads/2020/06/Patrick-Licht.jpg",
+      "alt": "Patrick – Lichttechnik",
+      "kategorie": "offstage"
+    },
+    {
+      "bild": "https://the-strongbow.at/wp-content/uploads/2017/09/Kirchberg-Krampusse-2017-0011.jpg",
+      "alt": "Probe / Auftritt",
+      "kategorie": "proben"
+    },
+    {
+      "bild": "https://the-strongbow.at/wp-content/uploads/2023/05/charly.jpg",
+      "alt": "Charly bei der Probe",
+      "kategorie": "proben"
+    },
+    {
+      "bild": "https://i0.wp.com/the-strongbow.at/wp-content/uploads/2026/08/123.jpg?resize=576,1024",
+      "alt": "Rock am Camp 2026",
+      "kategorie": "konzerte"
+    },
+    {
+      "bild": "https://i0.wp.com/the-strongbow.at/wp-content/uploads/2026/07/Plakat-2026_USA.jpeg?resize=720,960",
+      "alt": "US Car Festival Plakat",
+      "kategorie": "konzerte"
+    }
+  ]
+}

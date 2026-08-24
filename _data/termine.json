@@ -1,0 +1,25 @@
+{
+  "termine": [
+    {
+      "titel": "Rock am Camp 3 – 2026",
+      "datum": "2026-08-21",
+      "uhrzeit": "20:15",
+      "ort": "Camping Burgstaller, Döbriach",
+      "eintritt": ""
+    },
+    {
+      "titel": "Rocknight beim Arneitz – Faak am See – EBW",
+      "datum": "2026-09-04",
+      "uhrzeit": "20:15",
+      "ort": "Camping Arneitz, Faak am See",
+      "eintritt": "Eintritt frei"
+    },
+    {
+      "titel": "European Bike Week 2026 – Harley Village",
+      "datum": "2026-09-11",
+      "uhrzeit": "21:30",
+      "ort": "Faak am See",
+      "eintritt": ""
+    }
+  ]
+}
